@@ -1,0 +1,42 @@
+package tugasburatih;
+
+import java.util.Scanner;
+
+public class tugas13 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double berat = 0;
+        double tinggi = 0;
+        double hasil = 0;
+        String badan = "";
+        String ulang = "";
+        do {
+            System.out.print("Input your body weight (in kg) ");
+            berat = input.nextDouble();
+            System.out.print("Input your body height (in meter) ");
+            tinggi = input.nextDouble();
+
+            hasil = berat / (tinggi * tinggi);
+
+            if (hasil < 18.5) {
+                badan = "Underweight";
+            } else if (hasil < 24.9) {
+                badan = "Normal";
+            } else if (hasil < 29.5) {
+                badan = "Overweight";
+            } else if (hasil < 34.9) {
+                badan = "Obesity Class I";
+            } else if (hasil < 39.9) {
+                badan = "Obesity Class II";
+            } else if (hasil > 40) {
+                badan = "Extreme Obesity";
+            }
+            System.out.println("BMI: " + hasil);
+            System.out.println("You are " + badan);
+            System.out.println("");
+            System.out.println("Do you wanna repeat? ");
+            ulang = input.next();
+        } while (ulang.equalsIgnoreCase("Yes"));
+    }
+}
